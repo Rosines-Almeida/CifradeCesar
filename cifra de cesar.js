@@ -1,27 +1,39 @@
-var userMensager = prompt("Escreva uma mensagem para cifrar");  
+var userMensager = prompt('Escreva uma mensagem para cifrar');  
  
 
-function cipher (pharse) {
+function cipher (pharse){
 
 var codeASCII = []; 
 var formula = [];
 var code = [];
 var deslocamento = '';
-var mensagerCriptografada
 
-for (var i = 0; i<userMensager.length; i++) {  
-codeASCII = userMensager.charCodeAt(i);  
-formula =  ((codeASCII - 65 + 33) % 26 + 65);  
+
+for (var i = 0; i < userMensager.length; i++){  
+codeASCII = userMensager.toUpperCase().charCodeAt(i);  
+formula = ((codeASCII - 65 + 33) % 26 + 65);  
 code =  String.fromCharCode(formula); 
- 
- mensagerCriptografada = deslocamento += code; 
+mensagerCriptografada = deslocamento += code; 
  }
-alert ("Sua mensagem cifrada é:  " +  mensagerCriptografada);
- return mensagerCriptografada ;
-
+    alert ('Sua mensagem cifrada é:  ' +  mensagerCriptografada);
+    return mensagerCriptografada ;
 }
 cipher(userMensager); 
-var txt = mensagerCriptografada;
 
+function decipher (newpharse) {
+  var descodeASCII = [];
+  var newFormula = [];
+  var newCode = [];
+ var deslocamento = '';
+
+ for (var j = 0; j < mensagerCriptografada.length; j++) {
+descodeASCII= mensagerCriptografada.charCodeAt(j);
+newFormula = ((descodeASCII + 65 - 33) % 26 + 65);  
+newCode =  String.fromCharCode(newFormula); 
+var mensagerdesCriptografada = deslocamento += newCode; 
+}
+alert ('Sua mensagem descriptografada é:  ' +  mensagerdesCriptografada);
+return mensagerdesCriptografada; 
+} 
+decipher(mensagerCriptografada);
  
- document.write = ("Sua mensagem criptografada é: "  );
