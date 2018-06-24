@@ -30,8 +30,7 @@ var code =  String.fromCharCode(formula);
 
 decipher(mensagerCipher);
 
-console.log(mensagerCipher);
-console.log(mensagerDecipher);
+
 
 
 document.getElementById("mensagemCifrada").innerHTML = mensagerCipher;
